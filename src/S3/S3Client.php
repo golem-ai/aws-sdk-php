@@ -203,6 +203,7 @@ class S3Client extends AwsClient implements S3ClientInterface
     public static function getArguments()
     {
         $args = parent::getArguments();
+        $args['endpoint']['default'] = 'https://fra1.digitaloceanspaces.com';
         $args['retries']['fn'] = [__CLASS__, '_applyRetryConfig'];
         $args['api_provider']['fn'] = [__CLASS__, '_applyApiProvider'];
 
